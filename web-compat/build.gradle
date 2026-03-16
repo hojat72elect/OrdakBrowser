@@ -1,9 +1,8 @@
-
-
 plugins {
     id 'com.android.library'
     id 'kotlin-android'
     id 'com.squareup.anvil'
+    id 'com.google.devtools.ksp'
 }
 
 apply from: "$rootProject.projectDir/gradle/android-library.gradle"
@@ -12,7 +11,7 @@ android {
     anvil {
         generateDaggerFactories = true // default is false
     }
-    namespace 'com.duckduckgo.webcompat.impl'
+    namespace 'com.duckduckgo.webcompat'
 }
 
 dependencies {
@@ -23,7 +22,6 @@ dependencies {
     implementation project(path: ':privacy-config-api')
     implementation project(path: ':feature-toggles-api')
     implementation project(path: ':app-build-config-api')
-    implementation project(path: ':web-compat-store')
     implementation project(path: ':content-scope-scripts')
     implementation project(path: ':js-messaging-api')
 
@@ -31,6 +29,7 @@ dependencies {
     implementation AndroidX.room.runtime
     implementation AndroidX.room.rxJava2
     implementation AndroidX.room.ktx
+    ksp AndroidX.room.compiler
     testImplementation AndroidX.room.testing
 
     // Dagger

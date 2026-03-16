@@ -1,5 +1,3 @@
-
-
 package com.duckduckgo.webcompat.store
 
 import com.duckduckgo.common.utils.DispatcherProvider

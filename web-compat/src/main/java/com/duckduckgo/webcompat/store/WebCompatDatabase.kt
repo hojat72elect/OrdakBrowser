@@ -1,5 +1,3 @@
-
-
 package com.duckduckgo.webcompat.store
 
 import androidx.room.Database
